@@ -28,7 +28,9 @@ jobs:
     - name: Install Unzipper
       run: sudo apt-get install unzip -y
     - name: Ngrok Downloading(Linux)
-      run: sudo tar -xvzf ~/Downloads/ngrok-v3-stable-linux-arm.tgz -C /usr/local/bin
+      run:  |
+        wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-arm.tgz
+        sudo tar -xvzf ~/ngrok-v3-stable-linux-arm.tgz -C /usr/local/bin
     - name: Ngrok Auth
       run: ngrok authtoken $NGROK_AUTH_TOKEN
       env:
